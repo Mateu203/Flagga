@@ -112,13 +112,12 @@ namespace Flagga {
 
 		}
 #pragma endregion
-     Int16^ los;
-	 int lol;
+	 int los;
 	private: System::Void go_Click(System::Object^ sender, System::EventArgs^ e) {
 		Random^ ran = gcnew Random;
-		lol = ran->Next(1, 5);
+		los = ran->Next(1, 5);
 		String^ tekst; 
-		tekst = Convert::ToString(lol);
+		tekst = Convert::ToString(los);
 		this->p->Image = Image::FromFile("flag/"+ tekst + "fla"+ ".png");
 
 	
