@@ -32,7 +32,7 @@ namespace Flagga {
 
 	protected:
 		/// <summary>
-		/// Wyczyœæ wszystkie u¿ywane zasoby.
+		/// Wyczyï¿½ï¿½ wszystkie uï¿½ywane zasoby.
 		/// </summary>
 		~Game()
 		{
@@ -63,8 +63,8 @@ namespace Flagga {
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Metoda wymagana do obs³ugi projektanta — nie nale¿y modyfikowaæ
-		/// jej zawartoœci w edytorze kodu.
+		/// Metoda wymagana do obsï¿½ugi projektanta ï¿½ nie naleï¿½y modyfikowaï¿½
+		/// jej zawartoï¿½ci w edytorze kodu.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -204,6 +204,9 @@ namespace Flagga {
 		case 5:
 			odp = "Angola";
 			break;
+			case 6:
+			odp = "xd";
+			break;
 		}
 
 	}
@@ -227,7 +230,7 @@ namespace Flagga {
 		{
 			punkty = punkty - 20;
 			label3->Text = Convert::ToString(punkty);
-			label1->Text = "B³¹d";
+			label1->Text = "Bï¿½ï¿½d";
 			textBox1->Text = "";
 
 		}
