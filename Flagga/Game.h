@@ -207,6 +207,7 @@ namespace Flagga {
 			case 6:
 			odp = "xd";
 			break;
+			//fdsgsdgsdfgdsfg
 		}
 
 	}
