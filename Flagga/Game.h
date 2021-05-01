@@ -1,11 +1,12 @@
 #pragma once
+/*
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <string>
 #include <iostream>  
 #include<sstream>  
-
+*/
 
 namespace Flagga {
 	using namespace std;
