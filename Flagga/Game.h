@@ -205,9 +205,20 @@ namespace Flagga {
 			odp = "Angola";
 			break;
 			case 6:
-			odp = "xd";
+			odp = "Albania";
 
-			break;s
+			break;
+			case 7:
+			odp = "Armenia";
+			break;
+			case 8:
+			odp="Argentyna";
+			break;
+			case 9:
+			odp="Austria";
+			break;
+			case 10:
+			odp="Australia"
 		}
 
 	}
