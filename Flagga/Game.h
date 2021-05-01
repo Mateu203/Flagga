@@ -46,8 +46,13 @@ namespace Flagga {
 
 	private: System::Windows::Forms::Button^ go;
 	private: System::Windows::Forms::PictureBox^ p;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
 
-	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -63,10 +68,13 @@ namespace Flagga {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
 			this->go = (gcnew System::Windows::Forms::Button());
 			this->p = (gcnew System::Windows::Forms::PictureBox());
-			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->p))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -89,16 +97,67 @@ namespace Flagga {
 			this->p->TabIndex = 9;
 			this->p->TabStop = false;
 			// 
-			// contextMenuStrip1
+			// textBox1
 			// 
-			this->contextMenuStrip1->Name = L"contextMenuStrip1";
-			this->contextMenuStrip1->Size = System::Drawing::Size(61, 4);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Georgia", 48, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->textBox1->Location = System::Drawing::Point(780, 226);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(739, 259);
+			this->textBox1->TabIndex = 10;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(808, 541);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(344, 75);
+			this->button1->TabIndex = 11;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Game::button1_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label1->Location = System::Drawing::Point(586, 572);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(0, 31);
+			this->label1->TabIndex = 12;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label2->Location = System::Drawing::Point(323, 585);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(106, 31);
+			this->label2->TabIndex = 13;
+			this->label2->Text = L"Punkty:";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(238)));
+			this->label3->Location = System::Drawing::Point(435, 585);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(0, 31);
+			this->label3->TabIndex = 14;
 			// 
 			// Game
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->p);
 			this->Controls->Add(this->go);
 			this->MaximumSize = System::Drawing::Size(1920, 1080);
@@ -106,26 +165,78 @@ namespace Flagga {
 			this->Name = L"Game";
 			this->Text = L"Game";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
+			this->Load += gcnew System::EventHandler(this, &Game::Game_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->p))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	 int los;
-	private: System::Void go_Click(System::Object^ sender, System::EventArgs^ e) {
+		int los;
+		String^ odp;
+		int punkty = 0;
+		
+		
+	public: void gol()
+	{
+		
 		Random^ ran = gcnew Random;
-		los = ran->Next(1, 5);
-		String^ tekst; 
-		tekst = Convert::ToString(los);
-		this->p->Image = Image::FromFile("flag/"+ tekst + "fla"+ ".png");
+		los = ran->Next(1, 6);
 
-	
+			String^ tekst;
+			tekst = Convert::ToString(los);
+			this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
 
+		switch (los)
+		{
+		case 1:
+			odp = "Andora";
+			break;
+		case 2:
+			odp = "Zjednoczone Emiraty Arabskie";
+			break;
+		case 3:
+			odp = "Afganistan";
+			break;
+		case 4:
+			odp = "Antigua i Barbuda";
+			break;
+		case 5:
+			odp = "Angola";
+			break;
+		}
+
+	}
+
+	private: System::Void go_Click(System::Object^ sender, System::EventArgs^ e) {
+		gol();
+
+
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (textBox1->Text == odp)
+		{
+			punkty = punkty + 20;
+			label3->Text = Convert::ToString(punkty);
+			gol();
+			textBox1->Text = "";
+			label1->Text = "";
+
+		}
+		else
+		{
+			punkty = punkty - 20;
+			label3->Text = Convert::ToString(punkty);
+			label1->Text = "B³¹d";
+			textBox1->Text = "";
+
+		}
 	}
 
 
 
-
+	private: System::Void Game_Load(System::Object^ sender, System::EventArgs^ e) {
+		
+	}
 };
 }
