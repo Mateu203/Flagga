@@ -87,7 +87,6 @@ namespace Flagga {
 			this->go->TabIndex = 2;
 			this->go->Text = L"go";
 			this->go->UseVisualStyleBackColor = true;
-			this->go->Click += gcnew System::EventHandler(this, &Game::go_Click);
 			// 
 			// p
 			// 
@@ -102,10 +101,9 @@ namespace Flagga {
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Georgia", 48, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->textBox1->Location = System::Drawing::Point(780, 226);
-			this->textBox1->Multiline = true;
+			this->textBox1->Location = System::Drawing::Point(12, 12);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(739, 259);
+			this->textBox1->Size = System::Drawing::Size(1880, 80);
 			this->textBox1->TabIndex = 10;
 			// 
 			// button1
@@ -176,17 +174,17 @@ namespace Flagga {
 		int los;
 		String^ odp;
 		int punkty = 0;
-		
-		
+
+
 	public: void gol()
 	{
-		
-		Random^ ran = gcnew Random;
-		los = ran->Next(1, 6);
 
-			String^ tekst;
-			tekst = Convert::ToString(los);
-			this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
+		Random^ ran = gcnew Random;
+		los = ran->Next(1, 11);
+
+		String^ tekst;
+		tekst = Convert::ToString(los);
+		this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
 
 		switch (los)
 		{
@@ -205,54 +203,52 @@ namespace Flagga {
 		case 5:
 			odp = "Angola";
 			break;
-			case 6:
+		case 6:
 			odp = "Albania";
 
 			break;
-			case 7:
+		case 7:
 			odp = "Armenia";
 			break;
-			case 8:
-			odp="Argentyna";
+		case 8:
+			odp = "Argentyna";
 			break;
-			case 9:
-			odp="Austria";
+		case 9:
+			odp = "Austria";
 			break;
-			case 10:
-			odp="Australia"
+		case 10:
+			odp = "Australia";
 		}
 
 	}
 
-	private: System::Void go_Click(System::Object^ sender, System::EventArgs^ e) {
-		gol();
-
-
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (textBox1->Text == odp)
-		{
-			punkty = punkty + 20;
-			label3->Text = Convert::ToString(punkty);
-			gol();
-			textBox1->Text = "";
-			label1->Text = "";
+			if (textBox1->Text == odp)
+			{
+				punkty = punkty + 20;
+				label3->Text = Convert::ToString(punkty);
+				gol();
+				textBox1->Text = "";
+				label1->Text = "";
 
-		}
-		else
-		{
-			punkty = punkty - 20;
-			label3->Text = Convert::ToString(punkty);
-			label1->Text = "B��d";
-			textBox1->Text = "";
+			}
+			else
+			{
+				punkty = punkty - 20;
+				label3->Text = Convert::ToString(punkty);
+				label1->Text = "Blad";
+				textBox1->Text = "";
 
-		}
+			}
+		
 	}
 
 
 
 	private: System::Void Game_Load(System::Object^ sender, System::EventArgs^ e) {
-		
+		gol();
 	}
+
+
 };
 }
