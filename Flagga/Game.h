@@ -45,14 +45,16 @@ namespace Flagga {
 
 	protected:
 
-	private: System::Windows::Forms::Button^ go;
+
 	private: System::Windows::Forms::PictureBox^ p;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::Timer^ timer1;
+
+
+	private: System::Windows::Forms::Button^ button2;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -70,26 +72,15 @@ namespace Flagga {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
-			this->go = (gcnew System::Windows::Forms::Button());
 			this->p = (gcnew System::Windows::Forms::PictureBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->p))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// go
-			// 
-			this->go->Location = System::Drawing::Point(1556, 166);
-			this->go->Name = L"go";
-			this->go->Size = System::Drawing::Size(218, 164);
-			this->go->TabIndex = 2;
-			this->go->Text = L"go";
-			this->go->UseVisualStyleBackColor = true;
 			// 
 			// p
 			// 
@@ -111,11 +102,11 @@ namespace Flagga {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(808, 541);
+			this->button1->Location = System::Drawing::Point(1413, 98);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(344, 75);
 			this->button1->TabIndex = 11;
-			this->button1->Text = L"button1";
+			this->button1->Text = L"Spr";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Game::button1_Click);
 			// 
@@ -126,8 +117,9 @@ namespace Flagga {
 				static_cast<System::Byte>(238)));
 			this->label1->Location = System::Drawing::Point(586, 572);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(0, 31);
+			this->label1->Size = System::Drawing::Size(29, 31);
 			this->label1->TabIndex = 12;
+			this->label1->Text = L"0";
 			// 
 			// label2
 			// 
@@ -150,18 +142,28 @@ namespace Flagga {
 			this->label3->Size = System::Drawing::Size(0, 31);
 			this->label3->TabIndex = 14;
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(1393, 198);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(378, 115);
+			this->button2->TabIndex = 16;
+			this->button2->Text = L"Reset";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Visible = false;
+			// 
 			// Game
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->p);
-			this->Controls->Add(this->go);
 			this->MaximumSize = System::Drawing::Size(1920, 1080);
 			this->MinimumSize = System::Drawing::Size(1918, 1038);
 			this->Name = L"Game";
@@ -177,7 +179,7 @@ namespace Flagga {
 		int los;
 		String^ odp;
 		int punkty = 0;
-
+		bool win=false;
 
 	public: void gol()
 	{
@@ -188,7 +190,7 @@ namespace Flagga {
 		String^ tekst;
 		tekst = Convert::ToString(los);
 		this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
-		if (punkty < 200)
+		if (punkty <= 200)
 		{
 			switch (los)
 			{
@@ -197,61 +199,81 @@ namespace Flagga {
 				break;
 			case 2:
 				odp = "Zjednoczone Emiraty Arabskie";
+				//label4->Text = odp;
 				break;
 			case 3:
 				odp = "Afganistan";
+				//label4->Text = odp;
 				break;
 			case 4:
 				odp = "Antigua i Barbuda";
+				//label4->Text = odp;
 				break;
 			case 5:
 				odp = "Angola";
+				//label4->Text = odp;
 				break;
 			case 6:
 				odp = "Albania";
-
+				//label4->Text = odp;
 				break;
 			case 7:
 				odp = "Armenia";
+				//label4->Text = odp;
 				break;
 			case 8:
 				odp = "Argentyna";
+				//label4->Text = odp;
 				break;
 			case 9:
 				odp = "Austria";
+				//label4->Text = odp;
 				break;
 			case 10:
 				odp = "Australia";
+				//label4->Text = odp;
 				break;
 			case 11:
 				odp = "Wyspy Alandzkie";
+				//label4->Text = odp;
 				break;
 			case 12:
-				odp = "Azerbejdżan";
+				odp = "Azerbejdzan";
+				//label4->Text = odp;
 				break;
 			case 13:
-				odp = "Bośnia i Hercegowina";
+				odp = "Bosnia i Hercegowina";
+				//label4->Text = odp;
 				break;
 			case 14:
 				odp = "Barbados";
+				//label4->Text = odp;
 				break;
 			case 15:
 				odp = "Bangladesz";
+				//label4->Text = odp;
 				break;
 			case 16:
 				odp = "Belgia";
+				//label4->Text = odp;
 				break;
 			case 17:
 				odp = "Burkina Faso";
+				//label4->Text = odp;
 				break;
 			case 18:
 				odp = "Bulgaria";
+				//label4->Text = odp;
 				break;
 			case 19:
+				
 				odp = "Bahrajn";
+				//label4->Text = odp;
 				break;
 			case 20:
+				
 				odp = "Burundi";
+				//label4->Text = odp;
 				break;
 			}
 				/*case 10:
@@ -268,12 +290,15 @@ namespace Flagga {
 					break;*/
 			
 		}
-		else {
+		else if(punkty > 200){
 
-			label1->Text = "Wygrana";
+
 		}
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (punkty < 200) {
+			win = false;
+
 			if (textBox1->Text == odp)
 			{
 				punkty = punkty + 20;
@@ -291,7 +316,17 @@ namespace Flagga {
 				textBox1->Text = "";
 
 			}
-		
+		}
+		else if(punkty==200){
+			win = true;
+			label1->Text = "Wygrana";
+			punkty = 0;
+			p->Visible = false;
+			textBox1->Text = "";
+			button2->Visible = true;
+			label2->Visible = true;
+			label3->Visible = true;
+		}
 	}
 
 
@@ -299,6 +334,7 @@ namespace Flagga {
 	private: System::Void Game_Load(System::Object^ sender, System::EventArgs^ e) {
 		gol();
 	}
+
 
 
 };
