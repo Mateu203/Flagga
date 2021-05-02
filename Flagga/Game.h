@@ -52,6 +52,7 @@ namespace Flagga {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Timer^ timer1;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -69,6 +70,7 @@ namespace Flagga {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->go = (gcnew System::Windows::Forms::Button());
 			this->p = (gcnew System::Windows::Forms::PictureBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
@@ -76,6 +78,7 @@ namespace Flagga {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->p))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -180,48 +183,96 @@ namespace Flagga {
 	{
 
 		Random^ ran = gcnew Random;
-		los = ran->Next(1, 11);
+		los = ran->Next(1, 21);
 
 		String^ tekst;
 		tekst = Convert::ToString(los);
 		this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
-
-		switch (los)
+		if (punkty != 200)
 		{
-		case 1:
-			odp = "Andora";
-			break;
-		case 2:
-			odp = "Zjednoczone Emiraty Arabskie";
-			break;
-		case 3:
-			odp = "Afganistan";
-			break;
-		case 4:
-			odp = "Antigua i Barbuda";
-			break;
-		case 5:
-			odp = "Angola";
-			break;
-		case 6:
-			odp = "Albania";
+			switch (los)
+			{
+			case 1:
+				odp = "Andora";
+				break;
+			case 2:
+				odp = "Zjednoczone Emiraty Arabskie";
+				break;
+			case 3:
+				odp = "Afganistan";
+				break;
+			case 4:
+				odp = "Antigua i Barbuda";
+				break;
+			case 5:
+				odp = "Angola";
+				break;
+			case 6:
+				odp = "Albania";
 
-			break;
-		case 7:
-			odp = "Armenia";
-			break;
-		case 8:
-			odp = "Argentyna";
-			break;
-		case 9:
-			odp = "Austria";
-			break;
-		case 10:
-			odp = "Australia";
+				break;
+			case 7:
+				odp = "Armenia";
+				break;
+			case 8:
+				odp = "Argentyna";
+				break;
+			case 9:
+				odp = "Austria";
+				break;
+			case 10:
+				odp = "Australia";
+				break;
+			case 11:
+				odp = "Wyspy Alandzkie";
+				break;
+			case 12:
+				odp = "Azerbejdżan";
+				break;
+			case 13:
+				odp = "Bośnia i Hercegowina";
+				break;
+			case 14:
+				odp = "Barbados";
+				break;
+			case 15:
+				odp = "Bangladesz";
+				break;
+			case 16:
+				odp = "Belgia";
+				break;
+			case 17:
+				odp = "Burkina Faso";
+				break;
+			case 18:
+				odp = "Bulgaria";
+				break;
+			case 19:
+				odp = "Bahrajn";
+				break;
+			case 20:
+				odp = "Burundi";
+				break;
+			}
+				/*case 10:
+					odp = "Australia";
+					break;
+				case 10:
+					odp = "Australia";
+					break;
+				case 10:
+					odp = "Australia";
+					break;
+				case 10:
+					odp = "Australia";
+					break;*/
+			
 		}
+		else {
 
+			label1->Text = "Wygrana";
+		}
 	}
-
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 			if (textBox1->Text == odp)
 			{
