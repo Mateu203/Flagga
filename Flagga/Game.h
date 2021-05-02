@@ -188,7 +188,7 @@ namespace Flagga {
 		String^ tekst;
 		tekst = Convert::ToString(los);
 		this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
-		if (punkty != 200)
+		if (punkty < 200)
 		{
 			switch (los)
 			{
