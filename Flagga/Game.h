@@ -48,7 +48,7 @@ namespace Flagga {
 
 	private: System::Windows::Forms::PictureBox^ p;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Button^ button1;
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label3;
@@ -72,9 +72,9 @@ namespace Flagga {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Game::typeid));
 			this->p = (gcnew System::Windows::Forms::PictureBox());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -99,16 +99,7 @@ namespace Flagga {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(1880, 80);
 			this->textBox1->TabIndex = 10;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(1413, 98);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(344, 75);
-			this->button1->TabIndex = 11;
-			this->button1->Text = L"Spr";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &Game::button1_Click);
+			this->textBox1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &Game::textBox1_KeyUp);
 			// 
 			// label1
 			// 
@@ -144,13 +135,14 @@ namespace Flagga {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(1393, 198);
+			this->button2->Location = System::Drawing::Point(1514, 107);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(378, 115);
 			this->button2->TabIndex = 16;
 			this->button2->Text = L"Reset";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Visible = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Game::button2_Click);
 			// 
 			// Game
 			// 
@@ -161,9 +153,9 @@ namespace Flagga {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->p);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->MaximumSize = System::Drawing::Size(1920, 1080);
 			this->MinimumSize = System::Drawing::Size(1918, 1038);
 			this->Name = L"Game";
@@ -185,13 +177,11 @@ namespace Flagga {
 	{
 
 		Random^ ran = gcnew Random;
-		los = ran->Next(1, 21);
+		los = ran->Next(1, 51);
 
 		String^ tekst;
 		tekst = Convert::ToString(los);
 		this->p->Image = Image::FromFile("flag/" + tekst + "fla" + ".png");
-		if (punkty <= 200)
-		{
 			switch (los)
 			{
 			case 1:
@@ -275,27 +265,113 @@ namespace Flagga {
 				odp = "Burundi";
 				//label4->Text = odp;
 				break;
+			case 21:
+				odp = "Benin";
+				break;
+			case 22:
+				odp = "Brunei";
+				break;
+			case 23:
+				odp = "Boliwia";
+				break;
+			case 24:
+				odp = "Brazylia";
+				break;
+			case 25:
+				odp = "Bahamy";
+				break;
+			case 26:
+				odp = "Bhutan";
+				break;	
+			case 27:
+					odp = "Norwegia";
+					break;
+			case 28:
+				odp = "Botswana";
+				break;
+			case 29:
+				odp = "Bialorus";
+				break;
+			case 30:
+				odp = "Belize";
+				break;
+			case 31:
+				odp = "Kanada";
+				break;
+			case 32:
+				odp = "Demokratyczna Republika Konga";
+				break;
+			case 33:
+				odp = "Republika srodkowoafrykanska";
+				break;
+			case 34:
+				odp = "Kongo";
+				break;
+			case 35:
+				odp = "Szwajcaria";
+				break;
+			case 36:
+				odp = "Wybrzeze Kosci Sloniowej";
+				break;
+			case 37:
+				odp = "Chile";
+				break;
+			case 38:
+				odp = "Kamerun";
+				break;
+			case 39:
+				odp = "Chiny";
+				break;
+			case 40:
+				odp = "Kolumbia";
+				break;
+			case 41:
+				odp = "Kostaryka";
+				break;
+			case 42:
+				odp = "Kuba";
+				break;
+			case 43:
+				odp = "Republika Zielonego Przyladka";
+				break;
+			case 44:
+				odp = "Cypr";
+				break;
+			case 45:
+				odp = "Czechy";
+				break;
+			case 46:
+				odp = "Niemcy";
+				break;
+			case 47:
+				odp = "Dzibuti";
+				break;
+			case 48:
+				odp = "Dania";
+				break;
+			case 49:
+				odp = "Dominika";
+				break;
+			case 50:
+				odp = "Dominikana";
+				break;
+
 			}
-				/*case 10:
-					odp = "Australia";
-					break;
-				case 10:
-					odp = "Australia";
-					break;
-				case 10:
-					odp = "Australia";
-					break;
-				case 10:
-					odp = "Australia";
-					break;*/
 			
-		}
-		else if(punkty > 200){
-
-
-		}
+	
 	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+
+
+	private: System::Void Game_Load(System::Object^ sender, System::EventArgs^ e) {
+		gol();
+	}
+
+
+
+private: System::Void textBox1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyCode == Keys::Enter)
+	{
 		if (punkty < 200) {
 			win = false;
 
@@ -317,7 +393,7 @@ namespace Flagga {
 
 			}
 		}
-		else if(punkty==200){
+		else if (punkty == 200) {
 			win = true;
 			label1->Text = "Wygrana";
 			punkty = 0;
@@ -327,15 +403,17 @@ namespace Flagga {
 			label2->Visible = true;
 			label3->Visible = true;
 		}
-	}
 
-
-
-	private: System::Void Game_Load(System::Object^ sender, System::EventArgs^ e) {
-		gol();
-	}
-
-
-
+ }
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	win = false;
+	p->Visible = true;
+	button2->Visible = false;
+	label1->Visible = false;
+	label3->Text = "0";
+	gol();
+	
+}
 };
 }
