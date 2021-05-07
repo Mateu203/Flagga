@@ -177,7 +177,7 @@ namespace Flagga {
 	{
 
 		Random^ ran = gcnew Random;
-		los = ran->Next(1, 51);
+		los = ran->Next(1, 101);
 
 		String^ tekst;
 		tekst = Convert::ToString(los);
@@ -355,6 +355,158 @@ namespace Flagga {
 			case 50:
 				odp = "Dominikana";
 				break;
+				case 51:
+				odp = "Algieria";
+				break;
+				case 52:
+				odp = "Ekwador";
+				break;
+				case 53:
+				odp = "Estonia";
+				break;
+				case 54:
+				odp = "Egipt";
+				break;
+				case 55:
+				odp = "Sahara Zachodnia";;
+				break;
+								case 56:
+				odp = "Sahara Zachodnia";;
+				break;		
+		case 57:
+				odp = "Hiszpania";
+				break;		
+						case 58:
+				odp = "Etiopia";
+				break;		
+						case 59:
+				odp = "Finlandia";
+				break;		
+						case 60:
+				odp = "Fidzi";
+				break;		
+						case 61:
+				odp = "Mikronezja";
+				break;		
+						case 62:
+				odp = "Wyspy Owcze";
+				break;		
+						case 63:
+				odp = "Francja";
+				break;		
+						case 64:
+				odp = "Gabon";
+				break;		
+						case 65:
+				odp = "Wielka  Brytania";
+				break;		
+						case 66:
+				odp = "Grenada";
+				break;		
+						case 67:
+				odp = "Gruzja";
+				break;		
+						case 68:
+				odp = "Gujana Francuska";
+				break;		
+						case 69:
+				odp = "Ghana";
+				break;		
+						case 70:
+				odp = "Grenlandia";
+				break;		
+						case 71:
+				odp = "Gambia";
+				break;		
+						case 72:
+				odp = "Gwinea";
+				break;		
+						case 73:
+				odp = "Gwinea Rownikowa";
+				break;		
+						case 74:
+				odp = "Grecja";
+				break;		
+						case 75:
+				odp = "Gwatemala";
+				break;		
+						case 76:
+				odp = "Gwinea Bissau";
+				break;		
+						case 77:
+				odp = "Gujana";
+				break;		
+						case 78:
+				odp = "Hong Kong";
+				break;		
+						case 79:
+				odp = "Honduras";
+				break;		
+						case 80:
+				odp = "Chorwacja";
+				break;		
+						case 81:
+				odp = "Haiti";
+				break;		
+						case 82:
+				odp = "Wegry";
+				break;		
+						case 83:
+				odp = "Monako";
+				break;		
+						case 84:
+				odp = "Irlandia";
+				break;		
+						case 85:
+				odp = "Izrael";
+				break;		
+						case 86:
+				odp = "Indie";
+				break;		
+						case 87:
+				odp = "Irak";
+				break;		
+						case 88:
+				odp = "Iran";
+				break;		
+						case 89:
+				odp = "Islandia";
+				break;		
+						case 90:
+				odp = "Wlochy";
+				break;		
+						case 91:
+				odp = "Jamajka";
+				break;		
+						case 92:
+				odp = "Jordania";
+				break;		
+						case 93:
+				odp = "Japonia";
+				break;		
+						case 94:
+				odp = "Kenia";
+				break;		
+						case 95:
+				odp = "Kirgistan";
+				break;		
+						case 96:
+				odp = "Kambodza";
+				break;		
+						case 97:
+				odp = "Kiribati";
+				break;		
+						case 98:
+				odp = "Komory";
+				break;		
+						case 99:
+				odp = "Saint Kitts i Nevis";
+				break;		
+						case 100:
+				odp = "Korea Polnocna";
+				break;		
+						
+				
 
 			}
 			
