@@ -505,7 +505,243 @@ namespace Flagga {
 						case 100:
 				odp = "Korea Polnocna";
 				break;		
-						
+						case 101:
+						odp="Korea Poludniowa";
+						break;
+						case 102:
+						odp="Kuwejt";
+				break
+									case 103:
+						odp="Kazachstan";
+				break
+									case 104:
+						odp="Laos";
+				break
+									case 105:
+						odp="Lebanon";
+				break
+									case 106:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+										case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+										case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+										case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+										case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+										case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
+									case 102:
+						odp="";
+				break
 				
 
 			}
